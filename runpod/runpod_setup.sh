@@ -15,7 +15,7 @@ python -m ipykernel install --user --name=venv # so it shows up in jupyter noteb
 
 # 3) Setup dotfiles and ZSH
 mkdir git && cd git
-git clone https://github.com/jplhughes/dotfiles.git
+git clone https://github.com/hannamw/dotfiles.git
 cd dotfiles
 ./install.sh --zsh --tmux
 chsh -s /usr/bin/zsh
@@ -23,4 +23,4 @@ chsh -s /usr/bin/zsh
 cd ..
 
 # 4) Setup github
-echo ./scripts/setup_github.sh "jpl.hughes@btinternet.com" "John Hughes"
+echo ./scripts/setup_github.sh "mh2parker@gmail.com" "Michael Hanna"
