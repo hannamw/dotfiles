@@ -97,7 +97,14 @@ elif [ $machine == "Mac" ]; then
     defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
     defaults write -g com.apple.mouse.scaling 5.0
     defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+    sudo apt-get install -y npm
+    yes | npm i -g shell-ask
 fi
+
+# Configure git
+git config --global user.email "mh2parker@gmail.com"
+git config --global user.name "Michael Hanna"
 
 # Setting up oh my zsh and oh my zsh plugins
 ZSH=~/.oh-my-zsh
