@@ -47,6 +47,13 @@ esac
 
 # Installing on linux with apt
 if [ $machine == "Linux" ]; then
+    # Check if sudo exists, install it if not
+    if ! command -v sudo &> /dev/null; then
+        echo "sudo not found, installing sudo..."
+        apt-get update
+        apt-get install -y sudo
+    fi
+    
     DOT_DIR=$(dirname $(realpath $0))
     sudo apt-get update -y
     [ $zsh == true ] && sudo apt-get install -y zsh
