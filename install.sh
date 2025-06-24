@@ -54,6 +54,13 @@ if [ $machine == "Linux" ]; then
         apt-get install -y sudo
     fi
     
+    # Check if vim exists, install it if not
+    if ! command -v vim &> /dev/null; then
+        echo "vim not found, installing vim..."
+        sudo apt-get update
+        sudo apt-get install -y vim
+    fi
+    
     DOT_DIR=$(dirname $(realpath $0))
     sudo apt-get update -y
     [ $zsh == true ] && sudo apt-get install -y zsh
@@ -79,6 +86,13 @@ if [ $machine == "Linux" ]; then
 # Installing on mac with homebrew
 elif [ $machine == "Mac" ]; then
     yes | brew install coreutils ncdu htop ncdu rsync btop jq  # Mac won't have realpath before coreutils installed
+    
+    # Check if vim exists, install it if not
+    if ! command -v vim &> /dev/null; then
+        echo "vim not found, installing vim..."
+        yes | brew install vim
+    fi
+    
     curl -LsSf https://astral.sh/uv/install.sh | sh
 
     if [ $extras == true ]; then
