@@ -119,6 +119,7 @@ fi
 # Configure git
 git config --global user.email "mh2parker@gmail.com"
 git config --global user.name "Michael Hanna"
+git config pull.rebase false
 
 # Setting up oh my zsh and oh my zsh plugins
 ZSH=~/.oh-my-zsh
